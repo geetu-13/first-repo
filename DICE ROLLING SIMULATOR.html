@@ -1,0 +1,49 @@
+<html>
+<head>
+	<title>
+		DICE ROLLING SIMULATOR
+	</title>
+	<style>
+		#demo{
+			color:#9999ff;
+			text-shadow: 1px 1px #b3b3ff;
+			font-size: 35px;
+			text-align: center;
+		}
+		button{
+			background-color: #e6e6ff;
+		}
+		#res{
+			color:#0000b3;
+			font-size:65px;
+			text-shadow: 2px 2px #b3b3ff;
+		}
+	</style>
+</head>
+<body bgcolor="AntiqueWhite">
+	<p id="demo">ROLL THE DICE!!</p>
+	<br>
+	<p>Please enter the lower limit: </p>
+	<input id="mini">
+	<p>Please enter the upper limit: </p>
+	<input id="maxi">
+	<br>
+	<br>
+	<button type="button" onclick="randomNumber()">ROLL THE DICE!!</button>
+	<p> DICE SHOWS: </p>
+	<marquee direction="left" loop=""><p id="res" ></p></marquee>
+	<script>
+		function randomNumber(){
+			var min=document.getElementById("mini").value;
+			var max=document.getElementById("maxi").value;
+			min=Math.ceil(min);
+			max=Math.floor(max);
+			var RANDOM= Math.floor(Math.random()*(max-min+1))+min;
+			document.getElementById("res").innerHTML=" "+RANDOM+" ";
+		}
+	
+		
+	</script>
+
+</body>
+</html>
